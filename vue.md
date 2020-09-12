@@ -246,3 +246,21 @@ v-if，v-show，v-for，v-on，v-bind，v-html，v-model，v-once
 
 **113. elementUI 怎么扩展组件**
 
+### 生命周期
+
++ vue组件的生命周期主要有四个阶段,创建=>挂载=>更新=>销毁,每个阶段有对应的生命周期钩子,beforeCreate,created,beforeMount,mounted,beforeupdate,updated,beforeDestory,destroyed.比较常用的是created和mounted,created阶段是最早的可以操作数据,可以在这个阶段发送ajax请求,monted阶段是dom已经挂载到页面上,在这个阶段才可以操作dom
+
+### vuex
+
++ 为什么要用vuex不用全局变量
+  - 避免数据污染，将全局状态通过单向数据流这种方式管理起来
+
+### 为什么组件的data是用一个函数返回对象的形式
+
+  + 个组件被创建好之后，就可能被用在各个地方，而组件不管被复用了多少次，组件中的data数据都应该是相互隔离，互不影响的，基于这一理念，组件每复用一次，data数据就应该被复制一次，之后，当某一处复用的地方组件内data数据被改变时，其他复用地方组件的data数据不受影响;如果直接是一个对象,所有的组件实例共用了一份data数据，因此，无论在哪个组件实例中修改了data,都会影响到所有的组件实例,而如果data不是一个单纯的对象，而是一个函数返回值的形式，所以每个组件实例可以维护一份被返回对象的独立拷贝.
+
+  - 由于js的特性所致，存储数据的对象是复杂数据类型，需要存放在堆中，对一个对象的引用其实只是对该对象地址的引用而已。那么这样就会造成一个情况，假如某个对象的引用修改了这个对象上某个属性的值，就会导致在这个对象的其他引用上的该属性的值也会随之发生改变，这并不是我们想要的结果。
+
+### 组件传值
+
++ props,emit,vuex,parent,children，eventBus（new vue，然后定义install方法，引入到入口中 use）provide/inject $attrs $listenersd

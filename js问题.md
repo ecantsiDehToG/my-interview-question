@@ -269,17 +269,17 @@ console.log(arr); // [0,1,2,4:'z']
 
 > ​ 4. `字符串`，可以解析空格和换行，可以插入变量\${变量名}
 
-> ​ 5. Symbol 数据类型，值是唯一不可变的
+> ​ 5. Symbol 数据类型，值是唯一不可变的 =>布置iterator接口，在对象上增加Symbol.iterator属性，这个属性返回一个遍历器对象，对象有next方法， 每次调用next返回{value，done}对象
 
 > ​ 6. class
 
 > ​ 7. 语法糖，对象属性简写{name,age,sayHi(){}}
 
-> ​ 8. promise
+> ​ 8. promise async/await generate函数
 
-> ​ 9. 三个点扩展运算符
+> ​ 9. 三点扩展运算符
 
-> ​ 10. Set 和 Map 数据结构
+> ​ 10. Set 和 Map 数据结构/weakSet和weakMap 其中weakMap在vue3.0用到
 
 ​ **50. 为什么要有 class，class 怎么写**
 
@@ -363,7 +363,8 @@ console.log(arr); // [0,1,2,4:'z']
 
 ​ var b = JSON.parse(JSON.stringfy(a))
 
-​ 或者使用展开运算符：b ＝｛...a｝
+​ 或者使用展开运算符：b ＝｛...a｝//注意，多层对象的话这样 也不是深拷贝
+
 
 **59. AJAX 的原生写法**
 
