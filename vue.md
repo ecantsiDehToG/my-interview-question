@@ -264,3 +264,6 @@ v-if，v-show，v-for，v-on，v-bind，v-html，v-model，v-once
 ### 组件传值
 
 + props,emit,vuex,parent,children，eventBus（new vue，然后定义install方法，引入到入口中 use）provide/inject $attrs $listenersd
+
+**114.vuex是怎么实现所有组件实例this.$store都是同一个对象的**
+vuex是一个插件，通过Vue.use来使用，那么它肯定会有一个install方法，在install方法中，它其实会调用mixin的方法给组件的option混入beforeCreate钩子，mixin方法核心是mergeOptions，在混入的这个钩子函数中，会判断options中有没有store配置项，有store的将store设成this.$store,没有的从options.parent中取store设成this.$store
