@@ -1,7 +1,7 @@
 es6有哪些新特性 变量声明 箭头函数 模块化 结构赋值
 promise实现原理=> 宏任务微任务
+async/await 用法和原理 generate函数的语法糖
 generate用法，原理
-async/await 用法和原理
 es2020 新特性，promise加了新的api，可选链操作符解决读取对象属性的时候的undefined的判断，要配置babel7才支持
 **118. let 块级作用域问题**
 
